@@ -138,6 +138,15 @@ public class MainActivity extends AppCompatActivity {
         return app_present;
     }
 
+    public static int getToolbarHeight(Context context) {
+        final TypedArray styledAttributes = context.getTheme().obtainStyledAttributes(
+                new int[]{R.attr.actionBarSize});
+        int toolbarHeight = (int) styledAttributes.getDimension(0, 0);
+        styledAttributes.recycle();
+
+        return toolbarHeight;
+    }
+
     //#1
     public static class AboutFragment extends Fragment {
 
